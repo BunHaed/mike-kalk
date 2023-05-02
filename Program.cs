@@ -142,7 +142,7 @@ internal class Program
                     }
                 }
                 break;
-
+                //nikdy
             case '2':
             case 'ě':
                 Console.Clear();
