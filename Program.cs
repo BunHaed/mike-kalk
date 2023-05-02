@@ -7,6 +7,8 @@ using System.Data;
 
 internal class Program
 {
+
+    //Smaže historii kalkulací ze složky
     static void HistoryClear()
     {
         File.WriteAllText("D:\\Projects\\mike-kalk\\MyFile.txt", string.Empty);
@@ -14,7 +16,7 @@ internal class Program
 
     
 
-
+    //Zobrazí historii kalkulací ze složky
     static void HistoryShow()
     {
         string TextFromFile = File.ReadAllText(@"D:\Projects\mike-kalk\MyFile.txt", Encoding.UTF8);
@@ -36,7 +38,7 @@ internal class Program
     while (true)
         {
             
-            
+            //menu konzole
             Console.Clear();
             Console.WriteLine("Vítejte v kalkulačce");
             Console.WriteLine(" ");
@@ -47,7 +49,7 @@ internal class Program
             Console.WriteLine("Zvolte akci: ");
 
 
-            char odpoved = char.ToLower(Console.ReadKey().KeyChar);
+            char odpoved = char.ToLower(Console.ReadKey().KeyChar); //ošetření vstupu od uživatele
         switch (odpoved)
         {
             case '1':
@@ -63,16 +65,8 @@ internal class Program
                 { 
                     Console.WriteLine("Zadejte operátor:");
                     string b = Console.ReadLine();
-                    if (b == "konec" || b == "Konec")
-                    {
-                        Console.WriteLine("Konec programu");
-                        pokracovat = false;
-                        return;
-                    }
 
-
-
-                    else if (b != "+" && b != "-" && b != "*" && b != "/")
+                    if (b != "+" && b != "-" && b != "*" && b != "/")
                     {
                         Console.WriteLine("Invalid operator, try again please (+,-,*,/)");
                         continue;
@@ -93,7 +87,7 @@ internal class Program
                             break;
                         }
 
-                    File.AppendAllText("D:\\Projects\\mike-kalk\\MyFile.txt", Convert.ToString(a));
+                    File.AppendAllText("D:\\Projects\\mike-kalk\\MyFile.txt", Convert.ToString(a)); //otevře složku(nebo vytvoří, pokud není) a vloží do ní proměnnou a
 
                     if (b == "+")
                     {
@@ -120,7 +114,7 @@ internal class Program
 
                     try
                     {
-                        // open the file with append mode, so it doesn't delete old text
+                        // otevře složku pro úpravy bez smazání starých dat
                         using (FileStream fs = new FileStream(filePath, FileMode.Append))
                         {
                             fs.Close();
@@ -132,7 +126,7 @@ internal class Program
                             File.AppendAllText("D:\\Projects\\mike-kalk\\MyFile.txt", "\n");
                         }
 
-                        //Console.WriteLine("File updated successfully!");  -   only for testing purpose
+                        //Console.WriteLine("File updated successfully!");  -   pouze pro test
                     }
                     catch (Exception ex)
                     {
