@@ -143,6 +143,7 @@ internal class Program
                 }
                 break;
                 //nikdy
+                //lol
             case '2':
             case 'ě':
                 Console.Clear();
