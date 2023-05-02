@@ -141,7 +141,6 @@ internal class Program
                     }
 
                     else
-                        Console.ReadLine();
                         break;    
                     }
                 break;
