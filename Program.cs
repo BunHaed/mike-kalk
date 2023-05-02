@@ -3,6 +3,7 @@ using System;
 using System.Numerics;
 using System.Text;
 using System.Security.Cryptography.X509Certificates;
+using System.Data;
 
 internal class Program
 {
@@ -55,7 +56,7 @@ internal class Program
                 bool pokracovat = true;
                 while (pokracovat)
                 {
-
+                    DataSetDateTime dataSetDateTime = new DataSetDateTime();    
 
                     Console.WriteLine("Zadejte operátor:");
                     string b = Console.ReadLine();
@@ -167,10 +168,6 @@ internal class Program
                 Environment.Exit(0);
                 break;
         {
-
-                    Console.WriteLine("Mike");
-
-
 
 
 
